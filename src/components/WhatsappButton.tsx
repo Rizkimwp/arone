@@ -4,7 +4,6 @@ const WhatsappButton = () => {
       <a
         href="https://wa.me/6285934330755" // Replace with your WhatsApp number
         target="_blank"
-        rel="noopener noreferrer"
         className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-full shadow-lg flex items-center z"
       >
         <svg
