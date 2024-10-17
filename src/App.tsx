@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./layout/header";
 import AppRouter from "./router/AppRouter";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { HelmetProvider } from "react-helmet-async";
-import Footer from "./layout/footer";
+
+import BaseLayout from "./layout/BaseLayout";
 
 function App() {
   // Inisialisasi AOS
@@ -20,9 +20,9 @@ function App() {
   return (
     <BrowserRouter>
       <HelmetProvider>
-        <Header />
-        <AppRouter />
-        <Footer />
+        <BaseLayout>
+          <AppRouter />
+        </BaseLayout>
       </HelmetProvider>
     </BrowserRouter>
   );

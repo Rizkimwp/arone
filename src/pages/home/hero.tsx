@@ -10,7 +10,7 @@ const Hero = () => {
         <source src="/asset/videoplayback.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
       <div className="relative z-10 grid max-w-screen-xl  px-4 pt-40 pb-8 mx-auto lg:gap-12 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-72">
         <div className="mr-auto place-self-center lg:col-span-7">
           <h1
@@ -20,7 +20,7 @@ const Hero = () => {
             Biro jasa kependudukan sipil Pasang reklame dan perpanjangan pajak
             kendaraan
           </h1>
-          <p className="max-w-2xl mb-6 font-light text-gray-200 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+          <p className="max-w-2xl mb-6 font-light text-gray-200 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-100">
             Kami adalah solusi terpercaya untuk semua kebutuhan administrasi
             Anda. Dengan layanan profesional di bidang kependudukan sipil,
             pemasangan reklame, dan perpanjangan pajak kendaraan, kami

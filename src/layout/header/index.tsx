@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const index = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -57,19 +58,82 @@ const index = () => {
             </button>
           </div>
           {/* Drawer */}
+          {isMobileMenuOpen && (
+            <div className="fixed inset-0 z-50 bg-gray-800 bg-opacity-75 lg:hidden">
+              <div className="fixed top-0 right-0 w-64 h-full bg-white dark:bg-gray-800 p-4">
+                <button
+                  onClick={toggleMobileMenu}
+                  className="text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                >
+                  <span className="sr-only">Close drawer</span>
+                  {/* Icon for close button */}
+                  <svg
+                    className="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+
+                <ul className="mt-6 space-y-4">
+                  <li>
+                    <Link
+                      to="/"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Beranda
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/profile"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/layanan"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Layanan
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Artikel
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
+
           <div
-            className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-800 w-64 transform ${
-              isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            } transition-transform duration-300 ease-in-out lg:hidden`}
+            className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
           >
-            <button
-              onClick={toggleMobileMenu}
-              className="p-4 text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
-              <span className="sr-only">Close menu</span>
-              &times;
-            </button>
-            <ul className="mt-8 space-y-4 font-medium">
+            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <Link
                   to="/"
