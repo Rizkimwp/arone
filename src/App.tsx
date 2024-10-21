@@ -5,8 +5,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { HelmetProvider } from "react-helmet-async";
 
-import BaseLayout from "./layout/BaseLayout";
-
 function App() {
   // Inisialisasi AOS
   useEffect(() => {
@@ -20,9 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <HelmetProvider>
-        <BaseLayout>
-          <AppRouter />
-        </BaseLayout>
+        <AppRouter />
       </HelmetProvider>
     </BrowserRouter>
   );
