@@ -1,17 +1,22 @@
-import { faAdd } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import React from "react";
 
-const AddButton = () => {
+interface ButtonProps {
+  isAdd: React.Dispatch<React.SetStateAction<boolean>>;
+  title: string;
+  bgColor?: string;
+  icon: React.ReactNode;
+}
+
+const AddButton: React.FC<ButtonProps> = ({ isAdd, title, bgColor, icon }) => {
   return (
     <>
-      <Link
-        to="#"
-        className="flex items-center  bg-blue-500 items-center justify-center rounded-full bg-primary py-4 px-10 text-center font-medium text-yellow-50 hover:bg-opacity-90 lg:px-8 xl:px-10"
+      <button
+        onClick={() => isAdd(true)}
+        className={`flex items-center ${bgColor} items-center justify-center rounded-xl bg-primary py-4 px-10 text-center font-medium text-yellow-50 hover:bg-opacity-90 lg:px-8 xl:px-10`}
       >
-        <FontAwesomeIcon icon={faAdd} className="text-md text-white" />
-        <span className="text-sm font-medium">Artikel Baru</span>
-      </Link>
+        {icon}
+        <span className="text-sm font-medium">{title}</span>
+      </button>
     </>
   );
 };

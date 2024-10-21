@@ -44,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           >
             <FontAwesomeIcon
               icon={faDashboard}
-              className="text-md text-yellow-200"
+              className="text-md text-purple-500"
             />
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
@@ -54,7 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           >
             <FontAwesomeIcon
               icon={faUsers}
-              className="text-md text-yellow-200"
+              className="text-md text-purple-500"
             />
             <span className="text-sm font-medium">User</span>
           </Link>
@@ -64,7 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           >
             <FontAwesomeIcon
               icon={faFile}
-              className="text-md text-yellow-200"
+              className="text-md text-purple-500"
             />
             <span className="text-sm font-medium">Artikel</span>
           </Link>
@@ -74,7 +74,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           >
             <FontAwesomeIcon
               icon={faComment}
-              className="text-md text-yellow-200"
+              className="text-md text-purple-500"
             />
             <span className="text-sm font-medium">Komentar</span>
           </Link>
