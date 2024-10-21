@@ -44,8 +44,10 @@ const LineChart: React.FC = () => {
     <div className="bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4">Interaksi Artikel</h2>
       <Chart
-        options={chartData.options}
-        series={chartData.series}
+        options={chartData}
+        series={[
+          { name: "Sales 2024", data: [4000, 3000, 2000, 5000, 6000, 7000] },
+        ]}
         type="line"
         height={350}
       />
