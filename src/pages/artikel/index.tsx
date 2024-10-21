@@ -53,7 +53,7 @@ const index = () => {
           Manage your articles easily with this interface.
         </p>
       </div>
-      {isAdd ? <TableThree /> : <Form />}
+      {!isAdd ? <TableThree /> : <Form />}
     </>
   );
 };
