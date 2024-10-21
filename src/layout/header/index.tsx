@@ -125,12 +125,20 @@ const index = () => {
                     </a>
                   </li>
                 </ul>
+                <Link
+                  to="/admin"
+                  className="flex items-center py-3 px-6 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors duration-200 space-x-4"
+                >
+                  <span className="text-sm font-medium text-white">
+                    Dashboard
+                  </span>
+                </Link>
               </div>
             </div>
           )}
 
           <div
-            className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+            className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1 "
             id="mobile-menu-2"
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
@@ -176,7 +184,17 @@ const index = () => {
               </li>
             </ul>
           </div>
-
+          <div
+            className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1 "
+            id="mobile-menu-2"
+          >
+            <Link
+              to="/admin"
+              className="flex items-center py-3 px-6 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors duration-200 space-x-4"
+            >
+              <span className="text-sm font-medium text-white">Dashboard</span>
+            </Link>
+          </div>
           {/* Overlay */}
           {/* {isMobileMenuOpen && (
             <div
