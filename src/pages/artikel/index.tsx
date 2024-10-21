@@ -23,7 +23,7 @@ const index = () => {
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-3xl font-bold">Artikel</h1>
 
-          {isAdd ? (
+          {!isAdd ? (
             <AddButton
               isAdd={toggleSidebar}
               icon={<FontAwesomeIcon icon={faAdd} className="text-xl" />}
