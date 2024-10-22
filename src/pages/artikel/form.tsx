@@ -109,11 +109,15 @@ const Form = () => {
                 "advlist autolink lists link image charmap print preview anchor",
                 "searchreplace visualblocks code fullscreen",
                 "insertdatetime media table paste code help wordcount",
+                "code", // Menambahkan plugin untuk code view
               ],
               toolbar:
-                "undo redo | formatselect | bold italic backcolor | \
+                "undo redo | formatselect | fontselect fontsizeselect | bold italic underline strikethrough backcolor | \
                   alignleft aligncenter alignright alignjustify | \
-                  bullist numlist outdent indent | removeformat | help",
+                  bullist numlist outdent indent | blockquote | link image | \
+                  code fullscreen preview | removeformat | help",
+              content_style:
+                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }", // Mengatur style default konten
             }}
             value={content}
             onEditorChange={(newContent) => setContent(newContent)}
