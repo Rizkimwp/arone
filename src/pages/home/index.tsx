@@ -3,20 +3,19 @@ import Hero from "./hero";
 import Block from "./block";
 import { Helmet } from "react-helmet-async";
 import Detail from "./detail";
-import Price from "./price";
 import Contact from "./contact";
 
 const index: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>Beranda - Arone</title>
         <meta name="description" content="Ini adalah halaman saya" />
       </Helmet>
       <Hero />
       <Block />
       <Detail />
-      <Price />
+      {/* <Price /> */}
       <Contact />
     </>
   );

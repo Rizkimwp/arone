@@ -3,16 +3,16 @@ import Lottie from "lottie-react";
 import { fetchPelayanan, PelayananData } from "../../service/apiServices";
 import { useQuery } from "@tanstack/react-query";
 const Detail = () => {
-  const { data: data } = useQuery<PelayananData[]>({
-    queryKey: ["data"],
+  const { data: dataPelayanan } = useQuery<PelayananData[]>({
+    queryKey: ["dataPelayanan"],
     queryFn: fetchPelayanan,
   });
-  console.log(data);
+
   return (
     <section className="bg-gray-50 dark:bg-gray-800">
       <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
         {/* <!-- Row --> */}
-        {data?.map((item, index) => (
+        {dataPelayanan?.map((item, index) => (
           <div
             key={index}
             className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16"

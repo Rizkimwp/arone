@@ -1,12 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const index = () => {
+const index: React.FC<{ header: string | undefined }> = ({ header }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200 dark:bg-gray-900">
       <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
@@ -18,7 +19,7 @@ const index = () => {
               alt="Landwind Logo"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              ARONE
+              {header?.toLocaleUpperCase()}
             </span>
           </a>
           <div className="flex items-center lg:order-3">
@@ -109,30 +110,30 @@ const index = () => {
                     </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/artikel"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       Artikel
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/contact"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       Contact
                     </a>
                   </li>
                 </ul>
-                <Link
+                {/* <Link
                   to="/admin"
                   className="flex items-center py-3 px-6 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors duration-200 space-x-4"
                 >
                   <span className="text-sm font-medium text-white">
                     Dashboard
                   </span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           )}
@@ -168,7 +169,7 @@ const index = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/artikel"
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   Artikel
@@ -176,7 +177,7 @@ const index = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/kontak"
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   Contact
@@ -188,12 +189,12 @@ const index = () => {
             className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1 "
             id="mobile-menu-2"
           >
-            <Link
-              to="/admin"
+            {/* <Link
+              to="http://localhost:1337/admin"
               className="flex items-center py-3 px-6 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors duration-200 space-x-4"
             >
               <span className="text-sm font-medium text-white">Dashboard</span>
-            </Link>
+            </Link> */}
           </div>
           {/* Overlay */}
           {/* {isMobileMenuOpen && (

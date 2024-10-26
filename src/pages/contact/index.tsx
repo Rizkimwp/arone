@@ -1,18 +1,13 @@
 import { Helmet } from "react-helmet-async";
-import Layanan from "./hero";
-
-import Contact from "../home/contact";
-import Detail from "./detail";
+import Contact from "./hero";
 
 const index = () => {
   return (
     <>
       <Helmet>
-        <title>Layanan</title>
+        <title>Arone - Kontak</title>
         <meta name="description" content="Ini adalah halaman pelayanan " />
       </Helmet>
-      <Layanan />
-      <Detail />
       <Contact />
     </>
   );

@@ -1,4 +1,11 @@
+import { useQuery } from "@tanstack/react-query";
+import { fetchGlobalData, GlobalData } from "../../service/apiServices";
+
 const Hero = () => {
+  const { data: globalData } = useQuery<GlobalData>({
+    queryKey: ["globalData"],
+    queryFn: fetchGlobalData,
+  });
   return (
     <section className="relative bg-dark-900 overflow-hidden h-screen ">
       <video
@@ -17,14 +24,10 @@ const Hero = () => {
             data-aos="fade-up"
             className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-white"
           >
-            Biro jasa kependudukan sipil Pasang reklame dan perpanjangan pajak
-            kendaraan
+            {globalData?.siteDescription}
           </h1>
           <p className="max-w-2xl mb-6 font-light text-gray-200 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-100">
-            Kami adalah solusi terpercaya untuk semua kebutuhan administrasi
-            Anda. Dengan layanan profesional di bidang kependudukan sipil,
-            pemasangan reklame, dan perpanjangan pajak kendaraan, kami
-            berkomitmen untuk mempermudah urusan Anda.
+            {globalData?.siteDescription2}
           </p>
           {/* <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
             <a
