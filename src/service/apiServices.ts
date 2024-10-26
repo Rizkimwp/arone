@@ -138,7 +138,7 @@ export interface Author {
 
 export 
 
-const url = "https://03a3-2001-448a-20a0-94cc-c1a1-1aeb-8ce6-cbae.ngrok-free.app/api"
+const url = "https://5137-114-10-70-34.ngrok-free.app/api"
 // Fungsi untuk fetch data global dari API
 const apiService = axios.create({
   baseURL: url,
