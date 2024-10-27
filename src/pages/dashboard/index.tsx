@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
 import Statistic from "./card";
-import LineChart from "../../components/LineChart";
 
 const index = () => {
   return (
@@ -16,7 +15,6 @@ const index = () => {
       </div>
 
       <Statistic />
-      <LineChart />
     </>
   );
 };
