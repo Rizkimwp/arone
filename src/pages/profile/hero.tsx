@@ -1,11 +1,16 @@
 import Lottie from "lottie-react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchProfile, ProfileData } from "../../service/apiServices";
+import Loading from "../../components/Loading";
 const Hero = () => {
-  const { data: data } = useQuery<ProfileData>({
+  const { data: data, isLoading: isLoadingProfile } = useQuery<ProfileData>({
     queryKey: ["data"],
     queryFn: fetchProfile,
   });
+
+  if (isLoadingProfile) {
+    return <Loading />;
+  }
   return (
     <section className="bg-white dark:bg-gray-900 h-screen">
       <div className="grid max-w-screen-xl px-4 pt-72 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-72">

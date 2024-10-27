@@ -1,11 +1,17 @@
 import Lottie from "lottie-react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchLayanan, LayananData } from "../../service/apiServices";
+import Loading from "../../components/Loading";
 const Layanan = () => {
-  const { data: dataLayanan } = useQuery<LayananData>({
-    queryKey: ["dataLayanan"],
-    queryFn: fetchLayanan,
-  });
+  const { data: dataLayanan, isLoading: isLoadingLayanan } =
+    useQuery<LayananData>({
+      queryKey: ["dataLayanan"],
+      queryFn: fetchLayanan,
+    });
+
+  if (isLoadingLayanan) {
+    return <Loading />;
+  }
 
   return (
     <section className="bg-white dark:bg-gray-900 h-screen">

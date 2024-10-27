@@ -6,6 +6,7 @@ const Hero = () => {
     queryKey: ["globalData"],
     queryFn: fetchGlobalData,
   });
+
   return (
     <section className="relative bg-dark-900 overflow-hidden h-screen ">
       <video

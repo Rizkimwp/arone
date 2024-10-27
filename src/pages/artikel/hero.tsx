@@ -1,11 +1,17 @@
 import Lottie from "lottie-react";
 import { useQuery } from "@tanstack/react-query";
 import { ArtikelData, fetchArtikle } from "../../service/apiServices";
+import Loading from "../../components/Loading";
 const Artikel = () => {
-  const { data: dataArtikle } = useQuery<ArtikelData>({
-    queryKey: ["dataArtikle"],
-    queryFn: fetchArtikle,
-  });
+  const { data: dataArtikle, isLoading: isLoadingArtikel } =
+    useQuery<ArtikelData>({
+      queryKey: ["dataArtikle"],
+      queryFn: fetchArtikle,
+    });
+
+  if (isLoadingArtikel) {
+    return <Loading />;
+  }
 
   return (
     <section className="bg-white dark:bg-gray-900 h-screen">

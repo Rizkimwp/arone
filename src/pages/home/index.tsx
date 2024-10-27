@@ -2,8 +2,9 @@ import React from "react";
 import Hero from "./hero";
 import Block from "./block";
 import { Helmet } from "react-helmet-async";
-import Detail from "./detail";
+
 import Contact from "./contact";
+import Detail from "../layanan/detail";
 
 const index: React.FC = () => {
   return (
